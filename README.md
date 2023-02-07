@@ -19,6 +19,12 @@ SO THAT my website can handle large amounts of unstructured data
 - Mongoose ODM
 - Javascript
 
+## Features
+
+- Users can post thoughts, reactions, and create friend lists.
+- The API provides GET routes to return all users, all thoughts, a single user, and a single thought.
+- The API provides POST, PUT, and DELETE routes for users, thoughts, reactions, and friend lists.
+
 ## Links
 
 - [GitHub repo](https://github.com/kagebright/Social-Network-API-MongoDB)
