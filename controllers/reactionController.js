@@ -1,4 +1,4 @@
-const Reaction = require('../models/reaction');
+const Reaction = require('../models/Thought');
 
 // POST reactions for a specific message
 const getReaction = async (req, res) => {

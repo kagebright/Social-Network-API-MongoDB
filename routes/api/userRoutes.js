@@ -11,7 +11,7 @@ const {
   removeFriend
 } = require('../../controllers/userController');
 
-const User = require('../models/User');
+const User = require('../../models/User');
 
 // Route for getting all users
 router.get('/users', getAllUsers);
