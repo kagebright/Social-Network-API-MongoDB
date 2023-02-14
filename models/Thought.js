@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 //Schema to create Thoughts model
 const thoughtSchema = new Schema(
     {
-        thougts: {
+        thoughtText: {
             type: String,
             required: true,
             validate: [
@@ -14,10 +14,21 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
+            get: (timestamp) => dateFormat(timestamp),
         },
+        username: {
+            type: String,
+            required: true
+        },
+        reactions: [reactionSchema],
     }
 );
 
-const Thoughts = model('thoughts', thoughtSchema);
+//virtual to retrieve thew length of the thoughts reactions array field on query
+thoughtSchema.virtual('reactionCount').get(function () {
+    return this.reactions.length;
+  });
 
-module.exports = Thoughts;
+const Thought = model('thought', thoughtSchema);
+
+module.exports = Thought;
